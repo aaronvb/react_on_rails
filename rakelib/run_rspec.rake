@@ -51,7 +51,7 @@ namespace :run_rspec do
   Coveralls::RakeTask.new
 
   desc "run all tests"
-  task run_rspec: [:gem, :dummy, :dummy_no_turbolinks, :examples, :empty, :js_tests] do
+  task run_rspec: [:gem, :dummy, :dummy_no_turbolinks, :dummy_turbolinks_5, :examples, :empty, :js_tests] do
     puts "Completed all RSpec tests"
   end
 end
