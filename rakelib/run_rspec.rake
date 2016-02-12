@@ -9,7 +9,7 @@ include ReactOnRails::TaskHelpers
 namespace :run_rspec do
   desc "Run RSpec for top level only"
   task :gem do
-    run_tests_in("", rspec_args: File.join("spec", "react_on_rails"))
+    run_tests_in(gem_root, rspec_args: File.join("spec", "react_on_rails"))
   end
 
   desc "Runs dummy rspec with turbolinks"
