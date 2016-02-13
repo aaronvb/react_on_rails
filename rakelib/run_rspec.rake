@@ -26,10 +26,7 @@ namespace :run_rspec do
   end
 
   desc "Runs dummy respec with turbolinks 5"
-  task :dummy_turbolinks_5 do
-    dummy_app_dir = File.join(gem_root, "spec/dummy")
-    bundle_install_with_turbolinks_5_in(dummy_app_dir)
-    sh_in_dir(dummy_app_dir, "npm install")
+  task dummy_turbolinks_5: ["dummy_apps:dummy_app_with_turbolinks_5"] do
     run_tests_in(File.join("spec", "dummy"), env_vars: "ENABLE_TURBOLINKS_5=TRUE BUNDLE_GEMFILE=#{dummy_app_dir}/Gemfile")
   end
 
